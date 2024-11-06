@@ -13,8 +13,8 @@ class Square:
         """
         Initialize the square with a private instance attribute: size.
         Args:
-         size (int): The size of the square, default is 0.
-        
+           size (int): The size of the square, default is 0.
+
         Raises:
             TypeError: If size is not an integer.
             ValueError: If size is less than 0.
