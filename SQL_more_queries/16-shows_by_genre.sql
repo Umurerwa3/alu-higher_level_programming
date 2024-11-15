@@ -1,2 +1,10 @@
--- script that lists all records of the table 'second_table' of the database 'hbtn_0c_0' in your MySQL server
-SELECT score, name FROM second_table WHERE name IS NOT NULL ORDER BY score DESC;
+-- script that lists all shows, and all genres linked to that show,
+-- from the database 'hbtn_0d_tvshows'
+SELECT t.`title`, g.`name`
+  FROM `tv_shows` AS t
+       LEFT JOIN `tv_show_genres` AS s
+       ON t.`id` = s.`show_id`
+
+       LEFT JOIN `tv_genres` AS g
+       ON s.`genre_id` = g.`id`
+ ORDER BY t.`title`, g.`name`;
