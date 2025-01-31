@@ -1,8 +1,17 @@
 #!/usr/bin/node
-function factorial (num) {
-  if (isNaN(num) || num <= 1) {
-    return 1;
-  }
-  return num * factorial(num - 1);
+const argsCount = process.argv.length;
+const numbers = [];
+switch (argsCount) {
+  case 2:
+  case 3:
+    console.log(0);
+    break;
+
+  default:
+    for (let i = 2; i < argsCount; i++) {
+      numbers.push(process.argv[i]);
+    }
+    numbers.sort((a, b) => b - a);
+    console.log(numbers[1]);
+    break;
 }
-console.log(factorial(parseInt(process.argv[2])));
